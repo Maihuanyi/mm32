@@ -19,11 +19,11 @@ path += [cwd + '/HAL_Lib/Inc']
 CPPPATH = path
 
 if rtconfig.PLATFORM in ['gcc']:
-    src += [./System/startup_mm32f5260_gcc.s']
+    src += ['./System/startup_mm32f5260_gcc.s']
 elif rtconfig.PLATFORM in ['armcc', 'armclang']:
-    src += [./System/startup_mm32f5260_keil.c']
+    src += ['./System/startup_mm32f5260_keil.c']
 elif rtconfig.PLATFORM in ['iccarm']:
-    src += [./System/startup_mm32f5260_iar.s']
+    src += ['./System/startup_mm32f5260_iar.s']
 
 group = DefineGroup('Libraries', src, depend = [''], CPPPATH = CPPPATH)
 
