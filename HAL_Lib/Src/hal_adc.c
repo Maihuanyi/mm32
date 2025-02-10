@@ -90,6 +90,9 @@ void ADC_CalibrationConfig(ADC_TypeDef *adc, uint16_t precal)
     {
         __ASM("nop");                  /* __NOP(); */
     }
+
+    /* @note Clears the adc's calibration pending bits. */
+    adc->ADSTA_EXT |= ADC_ADSTA_EXT_EOCALIF_Msk;
 }
 
 /**
